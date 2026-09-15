@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Guide | CreatorPacks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-6">
+
+    <div id="content" class="max-w-xl w-full bg-gray-800 p-8 rounded-2xl shadow-2xl text-center hidden border border-gray-700">
+        <div class="text-5xl mb-6">🎉</div>
+        <h1 class="text-3xl font-black mb-2 uppercase">Payment Successful!</h1>
+        <p class="text-gray-400 mb-8 font-medium">Thank you for getting The Stickman Video System. Click below to download your PDF immediately.</p>
+        
+        <a href="The_Stickman_Video_System.pdf" download class="inline-block w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105 shadow-lg mb-4">
+            DOWNLOAD PDF NOW
+        </a>
+        
+        <p class="text-sm text-gray-500 font-medium">A backup copy has also been sent to your email.</p>
+    </div>
+
+    <!-- Security Check Script -->
+    <script>
+        // Check if the URL has the Razorpay payment ID
+        // e.g., success.html?razorpay_payment_id=pay_xxxxxx
+        const urlParams = new URLSearchParams(window.location.search);
+        const paymentId = urlParams.get('razorpay_payment_id');
+
+        if (paymentId) {
+            // Show the download box
+            document.getElementById('content').classList.remove('hidden');
+            // Save to localStorage so they don't have to buy again on this device
+            localStorage.setItem('creatorpacks_purchased', 'true');
+        } else {
+            // If someone tries to access this page directly without paying, kick them back to home
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
