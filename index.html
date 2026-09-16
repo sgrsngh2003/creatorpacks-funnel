@@ -14,74 +14,116 @@
 <body class="bg-gray-50 text-gray-900 pb-20 md:pb-0">
 
     <!-- Trust Banner -->
-    <div class="bg-gray-900 text-white text-center py-2 text-sm font-semibold tracking-wide">
-        ⭐⭐⭐⭐⭐ TRUSTED BY 1,200+ NEW CREATORS
+    <div class="bg-gray-900 text-white text-center py-2 text-xs md:text-sm font-bold tracking-widest uppercase">
+        ⭐⭐⭐⭐⭐ Trusted by 1,200+ New Creators
     </div>
 
     <!-- Hero Section -->
-    <section class="max-w-5xl mx-auto px-6 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
+    <section class="max-w-5xl mx-auto px-6 py-10 md:py-16 flex flex-col-reverse md:flex-row items-center gap-10">
         
         <!-- Left Text -->
         <div class="md:w-1/2 space-y-6 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-black leading-tight uppercase tracking-tight">
+            <h1 class="text-4xl md:text-6xl font-black leading-[1.1] uppercase tracking-tight text-gray-900">
                 The <span class="red-highlight">Stickman</span><br>Video System
             </h1>
             <p class="text-xl md:text-2xl text-gray-800 font-extrabold leading-snug">
                 Create Viral-Style Stickman Videos From Scratch in Under 2 Hours.
             </p>
             <p class="text-gray-600 font-medium text-lg leading-relaxed">
-                The exact 100% AI system to write scripts, generate stickman art, and edit videos fast. <span class="text-gray-900 font-bold border-b-2 border-red-500">Zero drawing skills required.</span>
+                The exact 100% AI system to write scripts, generate stickman art, and edit videos fast. <span class="text-gray-900 font-bold border-b-2 border-red-500 pb-0.5">Zero drawing skills required.</span>
             </p>
 
             <!-- RAZORPAY BUTTON CONTAINER -->
-            <div id="checkout" class="mt-8 bg-white p-6 rounded-2xl shadow-xl border-2 border-red-500 text-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">90% OFF TODAY</div>
-                <p class="text-sm font-bold text-gray-500 mb-1 uppercase tracking-wider">Get Instant Access</p>
-                <div class="text-4xl font-black mb-4 text-gray-900">₹49 <span class="text-xl line-through text-gray-400 font-medium">₹499</span></div>
+            <div id="checkout" class="mt-8 bg-white p-6 md:p-8 rounded-2xl shadow-2xl border-2 border-red-500 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] md:text-xs font-black px-4 py-1 rounded-bl-xl tracking-wider">90% OFF TODAY</div>
                 
+                <p class="text-sm font-bold text-gray-500 mb-1 uppercase tracking-wider">Total Value: <span class="line-through">₹499</span></p>
+                <div class="text-5xl font-black mb-2 text-gray-900 flex items-center justify-center gap-2">
+                    ₹49 <span class="text-sm font-bold text-green-500 bg-green-100 px-2 py-1 rounded-md uppercase">One Time Payment</span>
+                </div>
+                
+                <!-- Animated Arrow pointing to button -->
+                <div class="flex justify-center mt-4 mb-2 animate-bounce">
+                    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+
                 <!-- RAZORPAY SCRIPT -->
-                <div class="flex justify-center w-full mt-4 transform scale-110">
+                <div class="flex justify-center w-full transform scale-110 md:scale-125 my-4 origin-center">
                     <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TcjwFnsyFodIjW" async></script></form>
                 </div>
                 
-                <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-500 font-semibold">
-                    <span>🔒 256-bit Secure Payment</span>
-                    <span>•</span>
-                    <span>⚡ Instant PDF Access</span>
+                <div class="flex flex-wrap items-center justify-center gap-3 mt-6 text-xs text-gray-500 font-bold bg-gray-50 py-2 rounded-lg">
+                    <span class="flex items-center gap-1"><svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> 256-bit Secure</span>
+                    <span class="hidden md:inline">•</span>
+                    <span class="flex items-center gap-1"><svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg> Instant PDF Access</span>
                 </div>
             </div>
         </div>
 
         <!-- Right Image -->
-        <div class="md:w-1/2 relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl blur opacity-30"></div>
-            <!-- Replace src with actual cover image when ready -->
-            <img src="cover.png" alt="The Stickman Video System Cover" class="relative w-full max-w-md mx-auto rounded-xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-300">
+        <div class="md:w-1/2 relative w-full px-4 md:px-0">
+            <div class="absolute -inset-4 bg-gradient-to-tr from-red-500 to-orange-400 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
+            <img src="cover.png" alt="The Stickman Video System Cover" class="relative w-full max-w-[350px] md:max-w-md mx-auto rounded-xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition-transform duration-500">
+        </div>
+    </section>
+
+    <!-- Comparison Section (Pain vs Pleasure) -->
+    <section class="bg-white py-12 md:py-16 border-y border-gray-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-black text-center mb-10 uppercase">Stop Wasting Time on YouTube</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10">
+                <!-- The Old Way -->
+                <div class="bg-red-50 p-6 md:p-8 rounded-2xl border border-red-100">
+                    <h3 class="text-xl font-black text-red-600 mb-6 uppercase flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        The Old Way
+                    </h3>
+                    <ul class="space-y-4 text-gray-700 font-medium">
+                        <li class="flex items-start gap-3"><span class="text-red-500 mt-1 text-lg">✗</span> Staring at a blank screen trying to write a script.</li>
+                        <li class="flex items-start gap-3"><span class="text-red-500 mt-1 text-lg">✗</span> Spending 5 hours drawing stick figures frame-by-frame.</li>
+                        <li class="flex items-start gap-3"><span class="text-red-500 mt-1 text-lg">✗</span> Paying for expensive voiceover software.</li>
+                        <li class="flex items-start gap-3"><span class="text-red-500 mt-1 text-lg">✗</span> Getting 12 views after a week of hard work.</li>
+                    </ul>
+                </div>
+                
+                <!-- The New Way -->
+                <div class="bg-green-50 p-6 md:p-8 rounded-2xl border border-green-100 shadow-lg relative transform md:-translate-y-2">
+                    <div class="absolute -top-3 right-4 bg-green-500 text-white text-xs font-black px-3 py-1 rounded-full uppercase shadow-md">The Blueprint</div>
+                    <h3 class="text-xl font-black text-green-700 mb-6 uppercase flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        The CreatorPacks Way
+                    </h3>
+                    <ul class="space-y-4 text-gray-800 font-bold">
+                        <li class="flex items-start gap-3"><span class="text-green-500 mt-0.5 text-xl">✓</span> Use our exact prompt to get 60s scripts instantly.</li>
+                        <li class="flex items-start gap-3"><span class="text-green-500 mt-0.5 text-xl">✓</span> Copy-paste our image formulas for perfect art.</li>
+                        <li class="flex items-start gap-3"><span class="text-green-500 mt-0.5 text-xl">✓</span> Setup 100% free, natural-sounding AI voiceovers.</li>
+                        <li class="flex items-start gap-3"><span class="text-green-500 mt-0.5 text-xl">✓</span> Assemble the whole video in 30 minutes.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Social Proof / Testimonials -->
-    <section class="bg-white py-16 border-y border-gray-200">
+    <section class="bg-gray-50 py-16 border-b border-gray-200">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-black text-center mb-10 uppercase">Creators Are Loving It</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-center mb-10 uppercase">Creators Are Loving It</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Review 1 -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                    <p class="text-gray-700 font-medium mb-4">"I have zero drawing skills. Following this guide, I made my first short in 45 minutes using ChatGPT. Insane value."</p>
-                    <p class="font-bold text-gray-900 text-sm">— Rahul M.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 text-xl mb-3">★★★★★</div>
+                    <p class="text-gray-700 font-medium mb-6 leading-relaxed">"I have zero drawing skills. Following this guide, I made my first short in 45 minutes using ChatGPT. Insane value."</p>
+                    <p class="font-black text-gray-900 text-sm tracking-wide uppercase">— Rahul M.</p>
                 </div>
-                <!-- Review 2 -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                    <p class="text-gray-700 font-medium mb-4">"The exact image prompts alone are worth ₹500. No fluff, just straight to the point. Uploaded my first video today!"</p>
-                    <p class="font-bold text-gray-900 text-sm">— Sneha K.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 text-xl mb-3">★★★★★</div>
+                    <p class="text-gray-700 font-medium mb-6 leading-relaxed">"The exact image prompts alone are worth ₹500. No fluff, just straight to the point. Uploaded my first video today!"</p>
+                    <p class="font-black text-gray-900 text-sm tracking-wide uppercase">— Sneha K.</p>
                 </div>
-                <!-- Review 3 -->
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                    <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                    <p class="text-gray-700 font-medium mb-4">"I was struggling with scripts, but the copy-paste AI prompt in this PDF fixed everything. 10/10 recommend."</p>
-                    <p class="font-bold text-gray-900 text-sm">— Aman S.</p>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 text-xl mb-3">★★★★★</div>
+                    <p class="text-gray-700 font-medium mb-6 leading-relaxed">"I was struggling with scripts, but the copy-paste AI prompt in this PDF fixed everything. 10/10 recommend."</p>
+                    <p class="font-black text-gray-900 text-sm tracking-wide uppercase">— Aman S.</p>
                 </div>
             </div>
         </div>
@@ -90,46 +132,55 @@
     <!-- FAQ Section -->
     <section class="bg-gray-900 text-white py-16">
         <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl font-black text-center mb-10 uppercase text-white">Frequently Asked Questions</h2>
-            <div class="space-y-6">
-                <div class="bg-gray-800 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2 text-red-400">Do I need paid AI tools?</h3>
-                    <p class="text-gray-300">No. Every single tool mentioned in this system (for scripting, voice, and images) has a 100% free version that works perfectly.</p>
+            <h2 class="text-2xl md:text-3xl font-black text-center mb-10 uppercase text-white">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-800 p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors">
+                    <h3 class="font-black text-lg mb-2 text-red-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Do I need paid AI tools?
+                    </h3>
+                    <p class="text-gray-300 font-medium leading-relaxed">No. Every single tool mentioned in this system (for scripting, voice, and images) has a 100% free version that works perfectly.</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2 text-red-400">Can I do this on my phone?</h3>
-                    <p class="text-gray-300">Yes! You can generate the scripts and images on your phone, and assemble the final video using the free CapCut mobile app.</p>
+                <div class="bg-gray-800 p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors">
+                    <h3 class="font-black text-lg mb-2 text-red-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Can I do this on my phone?
+                    </h3>
+                    <p class="text-gray-300 font-medium leading-relaxed">Yes! You can generate the scripts and images on your phone, and assemble the final video using the free CapCut mobile app.</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-xl">
-                    <h3 class="font-bold text-lg mb-2 text-red-400">How do I get the product?</h3>
-                    <p class="text-gray-300">Immediately after your secure payment, you will be redirected to a download page. We will also email you a backup copy instantly.</p>
+                <div class="bg-gray-800 p-6 md:p-8 rounded-2xl border border-gray-700 hover:border-gray-600 transition-colors">
+                    <h3 class="font-black text-lg mb-2 text-red-400 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        How do I get the product?
+                    </h3>
+                    <p class="text-gray-300 font-medium leading-relaxed">Immediately after your secure payment, you will be redirected to a download page to access the PDF instantly.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mobile Sticky Buy Button (Only visible on small screens) -->
-    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white p-4 border-t border-gray-200 z-50 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.1)] flex items-center justify-between">
+    <!-- Mobile Sticky Buy Button -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white p-4 border-t border-gray-200 z-50 shadow-[0_-10px_25px_-5px_rgba(0,0,0,0.15)] flex items-center justify-between">
         <div>
-            <p class="text-xs text-gray-500 font-bold uppercase">Total Price</p>
-            <p class="text-2xl font-black text-gray-900">₹49</p>
+            <p class="text-[10px] text-gray-500 font-black uppercase tracking-widest">Total Price</p>
+            <p class="text-2xl font-black text-gray-900">₹49 <span class="text-sm line-through text-gray-400 font-medium">₹499</span></p>
         </div>
-        <a href="#checkout" class="bg-red-600 text-white font-black py-3 px-8 rounded-lg shadow-lg">
-            BUY NOW
+        <a href="#checkout" class="bg-red-600 text-white font-black py-3 px-8 rounded-xl shadow-lg active:scale-95 transition-transform uppercase tracking-wide">
+            Get Access
         </a>
     </div>
 
-    <footer class="bg-white border-t border-gray-200 py-10 mt-12 text-center text-sm text-gray-500 font-medium">
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-10 text-center text-sm text-gray-500 font-medium">
         <div class="max-w-3xl mx-auto px-6 space-y-4">
             <p>&copy; 2026 CreatorPacks. All rights reserved.</p>
             <p><strong>Contact Us:</strong> support@creatorpacks.shop</p>
             <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
-                <a href="policies.html#terms" class="hover:text-gray-600">Terms & Conditions</a>
-                <a href="policies.html#privacy" class="hover:text-gray-600">Privacy Policy</a>
-                <a href="policies.html#refunds" class="hover:text-gray-600">Refund Policy</a>
-                <a href="policies.html#contact" class="hover:text-gray-600">Contact Us</a>
+                <a href="policies.html#terms" class="hover:text-gray-900 transition-colors">Terms & Conditions</a>
+                <a href="policies.html#privacy" class="hover:text-gray-900 transition-colors">Privacy Policy</a>
+                <a href="policies.html#refunds" class="hover:text-gray-900 transition-colors">Refund Policy</a>
             </div>
-            <p class="text-xs text-gray-400 mt-4">Pricing is listed in INR (₹). Product is delivered instantly via digital download.</p>
+            <p class="text-[11px] text-gray-400 mt-4 max-w-lg mx-auto leading-relaxed">Pricing is listed in INR (₹). Product is delivered instantly via digital download. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way.</p>
         </div>
     </footer>
 
