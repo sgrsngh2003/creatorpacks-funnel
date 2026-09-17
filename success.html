@@ -30,12 +30,15 @@
         // e.g., success.html?razorpay_payment_id=pay_xxxxxx
         const urlParams = new URLSearchParams(window.location.search);
         const paymentId = urlParams.get('razorpay_payment_id');
+        const hasPurchased = localStorage.getItem('creatorpacks_purchased');
 
-        if (paymentId) {
+        if (paymentId || hasPurchased === 'true') {
             // Show the download box
             document.getElementById('content').classList.remove('hidden');
-            // Save to localStorage so they don't have to buy again on this device
-            localStorage.setItem('creatorpacks_purchased', 'true');
+            // Save to localStorage if it's their first time landing here
+            if (paymentId) {
+                localStorage.setItem('creatorpacks_purchased', 'true');
+            }
         } else {
             // If someone tries to access this page directly without paying, kick them back to home
             window.location.href = 'index.html';
