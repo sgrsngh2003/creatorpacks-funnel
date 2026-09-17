@@ -195,7 +195,7 @@
             },
             "handler": function (response) {
                 // Secure redirect after successful payment
-                window.location.href = "success.html?payment_id=" + response.razorpay_payment_id;
+                window.location.href = "success.html?razorpay_payment_id=" + response.razorpay_payment_id;
             },
             "theme": {
                 "color": "#dc2626"
