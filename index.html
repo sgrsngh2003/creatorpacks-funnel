@@ -189,6 +189,10 @@
             "name": "CreatorPacks",
             "description": "The Stickman Video System",
             "image": "https://creatorpacks.shop/cover.png",
+            "prefill": {
+                "email": "",
+                "contact": ""
+            },
             "handler": function (response) {
                 // Secure redirect after successful payment
                 window.location.href = "success.html?payment_id=" + response.razorpay_payment_id;
