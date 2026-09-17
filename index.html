@@ -42,10 +42,10 @@
                     ₹49 <span class="text-sm font-bold text-green-500 bg-green-100 px-2 py-1 rounded-md uppercase">One Time Payment</span>
                 </div>
                 
-                <!-- RAZORPAY SCRIPT -->
-                <div class="flex justify-center w-full transform scale-110 md:scale-125 my-6 origin-center bg-gray-50 py-4 rounded-xl border border-gray-200">
-                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TcjwFnsyFodIjW" async></script></form>
-                </div>
+                <!-- CUSTOM BUY BUTTON -->
+                <button class="custom-pay-btn w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 px-8 rounded-xl text-2xl transition-all transform hover:scale-[1.02] shadow-[0_4px_14px_0_rgba(220,38,38,0.39)] my-4 uppercase tracking-wide">
+                    GET INSTANT ACCESS
+                </button>
                 
                 <div class="flex flex-wrap items-center justify-center gap-3 mt-4 text-xs text-gray-500 font-bold bg-white py-2 rounded-lg">
                     <span class="flex items-center gap-1"><svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg> 256-bit Secure</span>
@@ -160,9 +160,9 @@
             <p class="text-[10px] text-gray-500 font-black uppercase tracking-widest">Total Price</p>
             <p class="text-2xl font-black text-gray-900">₹49 <span class="text-sm line-through text-gray-400 font-medium">₹499</span></p>
         </div>
-        <a href="#checkout" class="bg-red-600 text-white font-black py-3 px-8 rounded-xl shadow-lg active:scale-95 transition-transform uppercase tracking-wide">
+        <button class="custom-pay-btn bg-red-600 text-white font-black py-3 px-8 rounded-xl shadow-lg active:scale-95 transition-transform uppercase tracking-wide">
             BUY NOW
-        </a>
+        </button>
     </div>
 
     <!-- Footer -->
@@ -178,5 +178,34 @@
             <p class="text-[11px] text-gray-400 mt-4 max-w-lg mx-auto leading-relaxed">Pricing is listed in INR (₹). Product is delivered instantly via digital download. This site is not a part of the Facebook website or Facebook Inc. Additionally, This site is NOT endorsed by Facebook in any way.</p>
         </div>
     </footer>
+
+    <!-- RAZORPAY CUSTOM CHECKOUT API -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_live_Td3D4LVw0CJZMf",
+            "amount": "4900", // 49 INR in paise
+            "currency": "INR",
+            "name": "CreatorPacks",
+            "description": "The Stickman Video System",
+            "image": "https://creatorpacks.shop/cover.png",
+            "handler": function (response) {
+                // Secure redirect after successful payment
+                window.location.href = "success.html?payment_id=" + response.razorpay_payment_id;
+            },
+            "theme": {
+                "color": "#dc2626"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        
+        var payBtns = document.querySelectorAll('.custom-pay-btn');
+        payBtns.forEach(function(btn) {
+            btn.onclick = function(e) {
+                rzp1.open();
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
