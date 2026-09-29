@@ -59,11 +59,12 @@
 
         if (paymentId || hasPurchased === 'true') {
             document.getElementById('content').classList.remove('hidden');
-            if (paymentId) {
-                fbq('track', 'Purchase', {
-                    value: 99.00,
-                    currency: 'INR'
-                });
+            
+            // Only fire pixel if NOT already marked as purchased (prevents double-fire)
+            if (paymentId && hasPurchased !== 'true') {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', { value: 99.00, currency: 'INR' });
+                }
                 localStorage.setItem('gym_reels_purchased', 'true');
             }
         } else {

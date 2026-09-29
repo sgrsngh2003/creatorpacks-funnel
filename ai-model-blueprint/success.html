@@ -51,13 +51,15 @@
         if (paymentId || hasPurchased === 'true') {
             // Show the download box
             document.getElementById('content').classList.remove('hidden');
-            // Save to localStorage if it's their first time landing here
-            if (paymentId) {
-                // Fire Facebook Purchase Event
-                fbq('track', 'Purchase', {
-                    value: 49.00,
-                    currency: 'INR'
-                });
+            
+            // Only fire pixel if NOT already marked as purchased (prevents double-fire)
+            if (paymentId && hasPurchased !== 'true') {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', {
+                        value: 49.00,
+                        currency: 'INR'
+                    });
+                }
                 localStorage.setItem('ai_blueprint_purchased', 'true');
             }
         } else {

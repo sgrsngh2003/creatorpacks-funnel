@@ -322,8 +322,16 @@
                 "contact": ""
             },
             "handler": function (response) {
-                // Secure redirect after successful payment
-                window.location.href = "success.html?razorpay_payment_id=" + response.razorpay_payment_id;
+                // Fire Facebook Purchase Event & save state BEFORE redirect
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', { value: 49.00, currency: 'INR' });
+                }
+                localStorage.setItem('ai_blueprint_purchased', 'true');
+                
+                // 500ms delay to ensure Pixel network request completes
+                setTimeout(function() {
+                    window.location.href = "success.html?razorpay_payment_id=" + response.razorpay_payment_id;
+                }, 500);
             },
             "theme": {
                 "color": "#ef4444"

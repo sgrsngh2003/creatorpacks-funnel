@@ -388,7 +388,16 @@
             "description": "5000+ Gym Workout Animated Reels",
             "prefill": { "email": "", "contact": "" },
             "handler": function (response) {
-                window.location.href = "success.html?razorpay_payment_id=" + response.razorpay_payment_id;
+                // Fire Pixel & save state BEFORE redirect to prevent missing events
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', { value: 99.00, currency: 'INR' });
+                }
+                localStorage.setItem('gym_reels_purchased', 'true');
+                
+                // 500ms delay to ensure Meta Pixel network request completes
+                setTimeout(function() {
+                    window.location.href = "success.html?razorpay_payment_id=" + response.razorpay_payment_id;
+                }, 500);
             },
             "theme": { "color": "#ef4444" }
         };
